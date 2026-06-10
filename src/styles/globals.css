@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dracula-background: #282A36;
+  --dracula-currentLine: #44475A;
+  --dracula-foreground: #F8F8F2;
+  --dracula-comment: #6272A4;
+  --dracula-cyan: #8BE9FD;
+  --dracula-green: #50FA7B;
+  --dracula-orange: #FFB86C;
+  --dracula-pink: #FF79C6;
+  --dracula-purple: #BD93F9;
+}
+
+html, body, #__next {
+  height: 100%;
+  background: var(--dracula-background);
+  color: var(--dracula-foreground);
+}
+
+.bg-dracula-background { background: var(--dracula-background); }
+.bg-dracula-currentLine { background: var(--dracula-currentLine); }
+.text-dracula-foreground { color: var(--dracula-foreground); }
+.text-dracula-comment { color: var(--dracula-comment); }
+.bg-dracula-purple { background: var(--dracula-purple); }
+.dracula-purple { color: var(--dracula-purple); }
+
+/* small utility */
+.rounded { border-radius: 8px; }
