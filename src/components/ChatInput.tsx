@@ -21,6 +21,7 @@ export default function ChatInput({ onSend, disabled }: { onSend: (text: string)
         className="flex-1 bg-dracula-currentLine text-dracula-foreground rounded p-2 focus:outline-none"
         onKeyDown={(e) => {
           if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault()
             submit(e as any)
           }
         }}

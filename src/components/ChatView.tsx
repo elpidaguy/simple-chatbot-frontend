@@ -29,7 +29,7 @@ export default function ChatView({ initialPrompt }: { initialPrompt: string | nu
     setIsStreaming(true)
     appendMessage({ role: 'assistant', content: '', streaming: true })
     try {
-      await postChatStream({ model: 'gpt-3.5-turbo', messages: [{ role: 'user', content: text }] }, authFetch, (chunk) => {
+      await postChatStream({ model: 'models/gemini-3.5-flash', messages: [{ role: 'user', content: text }] }, authFetch, (chunk) => {
         // append chunk to last assistant message
         setMessages((prev) => {
           const copy = [...prev]
@@ -42,6 +42,17 @@ export default function ChatView({ initialPrompt }: { initialPrompt: string | nu
           return copy
         })
       })
+      // Clear streaming flag after response completes
+      setMessages((prev) => {
+        const copy = [...prev]
+        for (let i = copy.length - 1; i >= 0; i--) {
+          if (copy[i].role === 'assistant') {
+            copy[i] = { ...copy[i], streaming: false }
+            break
+          }
+        }
+        return copy
+      })
     } catch (err: any) {
       setError(err?.message || String(err))
       // mark last assistant message as error
@@ -49,7 +60,7 @@ export default function ChatView({ initialPrompt }: { initialPrompt: string | nu
         const copy = [...prev]
         for (let i = copy.length - 1; i >= 0; i--) {
           if (copy[i].role === 'assistant') {
-            copy[i] = { ...copy[i], error: true }
+            copy[i] = { ...copy[i], error: true, streaming: false }
             break
           }
         }

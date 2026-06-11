@@ -5,7 +5,7 @@ import { ReactNode } from 'react'
 export default function MessageBubble({ role = 'user', children, error }: { role?: 'user' | 'assistant'; children: ReactNode; error?: boolean }) {
   const isUser = role === 'user'
   return (
-    <div className={clsx('my-2 flex', isUser ? 'justify-start' : 'justify-end')}>
+    <div className={clsx('my-2 flex', isUser ? 'justify-end' : 'justify-start')}>
       <div
         className={clsx(
           'max-w-[70%] p-3 rounded-lg',
