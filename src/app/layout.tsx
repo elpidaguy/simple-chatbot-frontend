@@ -12,8 +12,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <div className="min-h-screen bg-dracula-background text-dracula-foreground">
-            <header className="p-4 flex items-center justify-between border-b border-dracula-currentLine">
+          <div className="min-h-screen bg-catppuccin-base text-catppuccin-text">
+            <header className="p-4 flex items-center justify-between border-b border-catppuccin-surface1">
               <h1 className="text-xl font-semibold">Generic AI chatbot</h1>
               <AuthHeader />
             </header>

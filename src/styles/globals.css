@@ -3,29 +3,107 @@
 @tailwind utilities;
 
 :root {
-  --dracula-background: #282A36;
-  --dracula-currentLine: #44475A;
-  --dracula-foreground: #F8F8F2;
-  --dracula-comment: #6272A4;
-  --dracula-cyan: #8BE9FD;
-  --dracula-green: #50FA7B;
-  --dracula-orange: #FFB86C;
-  --dracula-pink: #FF79C6;
-  --dracula-purple: #BD93F9;
+  --catppuccin-base: #1e1e2e;
+  --catppuccin-mantle: #181825;
+  --catppuccin-crust: #11111b;
+  --catppuccin-surface0: #313244;
+  --catppuccin-surface1: #45475a;
+  --catppuccin-surface2: #585b70;
+  --catppuccin-overlay0: #6c7086;
+  --catppuccin-overlay1: #7f849c;
+  --catppuccin-text: #cdd6f4;
+  --catppuccin-subtext1: #bac2de;
+  --catppuccin-subtext0: #a6adc8;
+  --catppuccin-mauve: #cba6f7;
+  --catppuccin-sky: #89dceb;
+  --catppuccin-peach: #fab387;
+  --catppuccin-green: #a6e3a1;
 }
 
 html, body, #__next {
   height: 100%;
-  background: var(--dracula-background);
-  color: var(--dracula-foreground);
+  background: var(--catppuccin-base);
+  color: var(--catppuccin-text);
 }
 
-.bg-dracula-background { background: var(--dracula-background); }
-.bg-dracula-currentLine { background: var(--dracula-currentLine); }
-.text-dracula-foreground { color: var(--dracula-foreground); }
-.text-dracula-comment { color: var(--dracula-comment); }
-.bg-dracula-purple { background: var(--dracula-purple); }
-.dracula-purple { color: var(--dracula-purple); }
+.bg-ctp-base { background: var(--catppuccin-base); }
+.bg-ctp-surface0 { background: var(--catppuccin-surface0); }
+.bg-ctp-surface1 { background: var(--catppuccin-surface1); }
+.text-ctp-text { color: var(--catppuccin-text); }
+.text-ctp-subtext0 { color: var(--catppuccin-subtext0); }
+.bg-ctp-mauve { background: var(--catppuccin-mauve); }
+.ctp-mauve { color: var(--catppuccin-mauve); }
+.border-ctp-surface1 { border-color: var(--catppuccin-surface1); }
+
+/* Markdown styling */
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--catppuccin-sky);
+}
+
+.markdown h1 { font-size: 1.5rem; }
+.markdown h2 { font-size: 1.25rem; }
+.markdown h3 { font-size: 1.1rem; }
+
+.markdown p {
+  margin: 0.25rem 0;
+}
+
+.markdown ul, .markdown ol {
+  margin: 0.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin: 0.125rem 0;
+}
+
+.markdown code {
+  background: var(--catppuccin-surface0);
+  color: var(--catppuccin-peach);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.markdown pre {
+  background: var(--catppuccin-surface0);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 0.25rem 0;
+}
+
+.markdown pre code {
+  background: none;
+  color: var(--catppuccin-text);
+  padding: 0;
+}
+
+.markdown blockquote {
+  border-left: 3px solid var(--catppuccin-mauve);
+  padding-left: 0.75rem;
+  color: var(--catppuccin-subtext0);
+  margin: 0.25rem 0;
+}
+
+.markdown strong {
+  color: var(--catppuccin-green);
+  font-weight: 600;
+}
+
+.markdown em {
+  color: var(--catppuccin-sky);
+  font-style: italic;
+}
+
+.markdown a {
+  color: var(--catppuccin-sky);
+  text-decoration: underline;
+}
 
 /* small utility */
 .rounded { border-radius: 8px; }

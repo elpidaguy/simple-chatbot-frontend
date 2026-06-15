@@ -4,16 +4,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dracula: {
-          background: '#282A36',
-          currentLine: '#44475A',
-          foreground: '#F8F8F2',
-          comment: '#6272A4',
-          cyan: '#8BE9FD',
-          green: '#50FA7B',
-          orange: '#FFB86C',
-          pink: '#FF79C6',
-          purple: '#BD93F9'
+        catppuccin: {
+          base: '#1e1e2e',
+          mantle: '#181825',
+          crust: '#11111b',
+          surface0: '#313244',
+          surface1: '#45475a',
+          surface2: '#585b70',
+          overlay0: '#6c7086',
+          overlay1: '#7f849c',
+          text: '#cdd6f4',
+          subtext1: '#bac2de',
+          subtext0: '#a6adc8',
+          mauve: '#cba6f7',
+          sky: '#89dceb',
+          peach: '#fab387',
+          green: '#a6e3a1'
         }
       }
     }

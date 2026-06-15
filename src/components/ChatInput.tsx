@@ -18,7 +18,7 @@ export default function ChatInput({ onSend, disabled }: { onSend: (text: string)
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={2}
-        className="flex-1 bg-dracula-currentLine text-dracula-foreground rounded p-2 focus:outline-none"
+        className="flex-1 bg-catppuccin-surface0 text-catppuccin-text rounded p-2 focus:outline-none focus:ring-2 focus:ring-catppuccin-sky disabled:opacity-50"
         onKeyDown={(e) => {
           if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault()
@@ -28,7 +28,7 @@ export default function ChatInput({ onSend, disabled }: { onSend: (text: string)
         disabled={disabled}
         aria-label="Message input"
       />
-      <button type="submit" className="px-4 py-2 bg-dracula-purple rounded" disabled={disabled}>
+      <button type="submit" className="px-4 py-2 bg-catppuccin-mauve text-catppuccin-base rounded font-semibold hover:opacity-90 disabled:opacity-50" disabled={disabled}>
         Send
       </button>
     </form>

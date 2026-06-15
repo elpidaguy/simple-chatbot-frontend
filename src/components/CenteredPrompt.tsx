@@ -18,7 +18,7 @@ export default function CenteredPrompt({ onStart }: { onStart: (text: string) =>
           placeholder="Type your message and press Enter..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full bg-dracula-currentLine text-dracula-foreground rounded p-4 focus:outline-none"
+          className="w-full bg-catppuccin-surface0 text-catppuccin-text rounded p-4 focus:outline-none focus:ring-2 focus:ring-catppuccin-sky"
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
               submit(e as any)

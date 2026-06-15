@@ -9,11 +9,13 @@ export default function MessageBubble({ role = 'user', children, error }: { role
       <div
         className={clsx(
           'max-w-[70%] p-3 rounded-lg',
-          isUser ? 'bg-dracula-currentLine text-dracula-foreground' : 'bg-dracula-purple text-white',
+          isUser ? 'bg-catppuccin-surface0 text-catppuccin-text' : 'bg-catppuccin-mauve text-catppuccin-base',
           error && 'ring-2 ring-red-500'
         )}
       >
-        {children}
+        <div className={clsx(isUser ? '' : 'markdown')}>
+          {children}
+        </div>
       </div>
     </div>
   )
